@@ -1,24 +1,34 @@
-# AI Collection
+# AI Collection 🚀
 
-A centralized repository for AI assistant configurations, prompts, and automation scripts for various IDEs and services.
+A modularized, domain-driven repository for AI assistant configurations. This setup separates **domain knowledge** from **tool-specific implementation**.
+
+## Architecture Philosophy
+
+### 🧠 Core (The Knowledge)
+Located in [`/core`](./core), this directory contains the global "Source of Truth" for your engineering standards.
+- **Frontend**: Best practices for UI/UX, React, CSS, and modern web.
+- **Backend**: API design, Database schemas, and Server-side logic.
+- **DevOps**: CI/CD, Containerization, and Infrastructure.
+
+### 🛠 IDEs (The Adapters)
+Located in [`/ides`](./ides), these are entry points for specific tools (Antigravity, Cursor, etc.). They reference the `core/` knowledge but format it for the specific IDE's features (like skills or custom workflows).
+
+---
 
 ## Repository Structure
 
-- **[core/](./core)**: The heart of the repository. Contains shared rules, skills, and workflows organized by domain.
-  - **[general/](./core/general)**: Cross-cutting rules and tools (e.g., skill-creator).
-  - **[frontend/](./core/frontend)**: UI/UX, React, CSS, and browser-specific logic.
-  - **[backend/](./core/backend)**: Server-side logic, Databases, API design.
-  - **[devops/](./core/devops)**: CI/CD, Docker, Infrastructure as Code.
-- **[ides/](./ides)**: IDE-specific configuration files that reference the `core/` assets.
-- **[cli/](./cli)**: Configuration files for AI CLI tools.
-- **[prompts/](./prompts)**: A library of reusable templates.
-- **[services/](./services)**: Instructions and settings for web-based services like Claude (Projects) and ChatGPT (Custom Instructions).
-- **[scripts/](./scripts)**: Automation scripts for syncing settings across the system.
+- **[core/](./core)**: Shared domain assets (Rules, Skills, Workflows).
+- **[ides/](./ides)**: IDE-specific configurations and adapters.
+- **[cli/](./cli)**: Configs for AI terminal tools (Aider, etc.).
+- **[prompts/](./prompts)**: A library of raw, reusable system prompts.
+- **[services/](./services)**: Settings for Claude Projects, ChatGPT Custom Instructions, etc.
+- **[scripts/](./scripts)**: Automation tools for environment syncing.
 
-## Setup & Usage
+## How to Use
 
-### Antigravity
-To use the Antigravity configurations, ensure the `.agent` directory is recognized by your project. If you are working in a different directory, you can create a symbolic link to the shared rules in this repository.
+1. **Developing Core Knowledge**: Use rules in `core/` to improve AI performance across all tools.
+2. **Tool Integration**: Use the adapters in `ides/` to bring your core knowledge into your favorite editor.
+3. **Automation**: Use scripts in `scripts/` to symlink or copy configs into your local projects.
 
 ---
-*Created with love for high-performance AI-assisted development.*
+*Built for the future of AI-native software engineering.*
